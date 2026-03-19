@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* Light theme variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --border: #e5e5e5;
+  --primary: #0070f3;
+  --primary-hover: #0051cc;
+  --secondary: #f5f5f5;
+  --error: #e00;
+  --success: #0070f3;
+  --editor-bg: #ffffff;
+  --preview-bg: #ffffff;
+  --divider: #e5e5e5;
+  --button-bg: #f5f5f5;
+  --button-hover: #e5e5e5;
+  --toast-bg: #ffffff;
+  --toast-border: #e5e5e5;
+}
+
+/* Dark theme variables */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --border: #262626;
+  --primary: #0070f3;
+  --primary-hover: #0051cc;
+  --secondary: #1a1a1a;
+  --error: #ff4444;
+  --success: #00d084;
+  --editor-bg: #1e1e1e;
+  --preview-bg: #1e1e1e;
+  --divider: #262626;
+  --button-bg: #262626;
+  --button-hover: #333333;
+  --toast-bg: #1a1a1a;
+  --toast-border: #262626;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Monaco editor container styles */
+.monaco-editor-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.monaco-editor {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure Monaco editor respects theme */
+.monaco-editor .margin,
+.monaco-editor .monaco-editor-background {
+  background-color: var(--editor-bg);
+}
+
+/* Preview pane styles */
+.preview-pane {
+  width: 100%;
+  height: 100%;
+  background: var(--preview-bg);
+  overflow: hidden;
+}
+
+.preview-pane iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+}
+
+/* Split pane divider */
+.split-divider {
+  width: 4px;
+  background: var(--divider);
+  cursor: col-resize;
+  transition: background 0.2s ease;
+}
+
+.split-divider:hover {
+  background: var(--primary);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
